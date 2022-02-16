@@ -66,12 +66,12 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 
 function is31Flavors(array){
- if (array.length === 31) {
+ if (array.length === 31) {   
    return true;
  } else {
    return false;
  }
-}
+}   
 console.log('task 2', is31Flavors(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -86,12 +86,11 @@ Use the addFlavor function below to do the following:
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-
-function addFlavor(array, newFlavor){
- let newArray = []
- return newArray = array.unshift(newFlavor);
+function addFlavor(array, newFlavor) {
+  array.unshift(newFlavor)
+  return array;
 }
-console.log('task 3', addFlavor(originalFlavors, 'Rainbow Sherbert'));
+console.log('task 3', addFlavor(originalFlavors, 'Rainbow Sherbert'))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -105,12 +104,11 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(array){
- let newArray = []
- return newArray = array.pop();
+function removeLastFlavor(array) {
+  array.pop();
+  return array;
 }
-console.log('task 4', removeLastFlavor(originalFlavors))
-console.log(originalFlavors)
+console.log('task 4', removeLastFlavor(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -124,10 +122,10 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array, index) {
+  return array[index];
 }
-
+console.log('task 5', getFlavorByIndex(originalFlavors, 2))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -144,10 +142,15 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array, flavor){
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === flavor) {
+      array.splice(i, 1);
+    }
+  }
+  return array
 }
-
+console.log('task 6', removeFlavorByName(originalFlavors, 'Rocky Road'))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -170,10 +173,17 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
-}
 
+function filterByWord(array, string) {
+  let newFlavors = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(string)) {
+      newFlavors.push(array[i]);
+    }
+  }
+  return newFlavors
+}
+console.log('task 7', filterByWord(originalFlavors, 'Chocolate'));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
